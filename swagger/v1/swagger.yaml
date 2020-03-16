@@ -1,0 +1,117 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Notary API",
+    "version": "v1"
+  },
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "summary": "saasAdminLogin auth",
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      }
+    },
+    "/sassadmins": {
+      "get": {
+        "summary": "list saas_admins",
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      }
+    },
+    "/sassadmin/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "description": "id",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "show saas_admin",
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      },
+      "patch": {
+        "summary": "update saas_admin",
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      },
+      "put": {
+        "summary": "update saas_admin",
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete saas_admin",
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      }
+    },
+    "/sassadmin": {
+      "post": {
+        "summary": "create saas_admin",
+        "parameters": [
+          {
+            "name": "log",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "my_custom_parameter": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description",
+                "user_phone_number"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}
