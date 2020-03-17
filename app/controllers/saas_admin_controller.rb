@@ -3,8 +3,8 @@ class SaasAdminController < ApplicationController
     #before_action :saasadmin_authorize_request
 
     def index
-        users = SaasAdmin.where("isDeleted = 0")
-        render json: { status: 'Success', message: 'Load Users', data: users}, status: :ok                  
+       # users = SaasAdmin.where("isDeleted = 0")
+        render json: { status: 'Success', message: 'Load Users'}, status: :ok                  
     end
 
     def show
