@@ -23,7 +23,7 @@ class AuthController < ApplicationController
         exp = time.strftime("%m-%d-%Y %H:%M")
         render json: { token: token, 
                 userId: @user.saasUserId, 
-                userName: @user.firstName +" "+ @user.lastName,
+                userName: @user.firstName,
                 role: @user.role }, status: :ok
       else
         render json: { error: 'unauthorized' }, status: :unauthorized
