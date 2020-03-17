@@ -7,7 +7,6 @@ class SaasAdminController < ApplicationController
         render json: { status: 'Success', message: 'Load Users'}, status: :ok                  
     end
 
-    
     def show
         user = SaasAdmin.find(params[:id]);
         render json: { status: 'Success', message: 'show User By ID', data: user}, status: :ok                 
